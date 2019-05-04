@@ -6,7 +6,7 @@
 */
 #include "Define.h"
 
-
+#define MAXINT 32768//¡Þ
 #define MaxV 100
 typedef char vexsType;
 typedef int edgesType;

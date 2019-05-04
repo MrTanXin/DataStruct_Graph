@@ -66,14 +66,31 @@ void CreateMap(AMGraph& G)
 #pragma endregion
 
 #pragma region set edges[] as 0
-
-	for (int i = 0; i < G.vexnum; i++)
+	if (G.HWF)
 	{
-		for (int j = 0; j < G.vexnum; j++)
+		for (int i = 0; i < G.vexnum; i++)
 		{
-			G.edges[i][j] = 0;
+			for (int j = 0; j < G.vexnum; j++)
+			{
+				G.edges[i][j] = MAXINT;
+			}
+		}
+		for (int i = 0; i < G.vexnum; i++)
+		{
+			G.edges[i][i] = 0;
 		}
 	}
+	else
+	{
+		for (int i = 0; i < G.vexnum; i++)
+		{
+			for (int j = 0; j < G.vexnum; j++)
+			{
+				G.edges[i][j] = 0;
+			}
+		}
+	}
+	
 
 #pragma endregion
 
